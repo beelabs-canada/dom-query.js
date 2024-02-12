@@ -12,14 +12,26 @@ requirejs.config({
     "waitSeconds": 1
 });
 
+
+
+
 /* ================================== */
 /* MAIN                               */
 /* ================================== */
 
-require(["utils"], function (Toolbox) {
+require(["utils"], function (Util) {
+
 
     // Lets bind to the respective elements
-    Toolbox.query("[data-query]", { matchReappearance: true }).forEach(function (element) {
+    Util.query("web-component", { matchReappearance: true }).forEach(function (element) {
+        // lets see what we need to load
+        let _component = element.getAttribute("component");
+
+        require([`plugin/${_component}/load`], function (component) {
+            if (component && component.handle) {
+                component.handle(element);
+            }
+        });
 
     });
 
