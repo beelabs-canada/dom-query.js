@@ -1,7 +1,7 @@
 
 
 
-define(['plugin/text!plugin/feed/template.html'], function (html) {
+define(['text!component/feed/template.html'], function (html) {
     "use strict";
 
     const _handle = (element) => {
