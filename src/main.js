@@ -6,7 +6,9 @@
 requirejs.config({
     "paths": {
         "text": "core/text",
-        "query": "core/query"
+        "query": "core/query",
+        "mustache": "vendor/mustache",
+        "utils": "core/utils"
     },
     "config": {
         "i18n": {
@@ -31,9 +33,9 @@ require(["query"], function (Query) {
         // lets see what we need to load
         // TODO: Phase 2 - we can scale to add compound web components (advanced)
         let _component = element.getAttribute("component"),
-            component_path = ["component",_component,"load"].join("/");
+            component_path = ["component", _component, "load"].join("/");
 
-        require([ component_path ], function (component) {
+        require([component_path], function (component) {
             if (component && component.handle) {
                 component.handle(element);
             }

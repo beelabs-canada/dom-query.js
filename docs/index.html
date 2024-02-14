@@ -14,12 +14,25 @@
         libero!</p>
 
     <h2>Web Components</h2>
-    <web-component component="feed">
+    <web-component component="feed" query=".!a[data-src]?merge=all&limit=5">
         <ul>
-            <li><a href="page1"></a></li>
-            <li><a href="page2"></a></li>
-            <li><a href="page3"></a></li>
-            <li><a href="page4"></a></li>
+            <li><a href="https://www.cbsa-asfc.gc.ca/menu-eng.html" data-src="ajax/feed.1.json">Canada Border Services
+                    Agency</a></li>
+            <li><a href="https://agriculture.canada.ca/en" data-src="ajax/feed.2.json">Agriculture and Agri-Food
+                    Canada</a></li>
+            <li><a href="https://accessible.canada.ca" data-src="ajax/feed.3.json">Accessibility Standards Canada</a>
+            </li>
+        </ul>
+    </web-component>
+
+    <web-component component="feed" query="page!a[data-src]?merge=all&limit=5">
+        <ul>
+            <li><a href="https://www.cbsa-asfc.gc.ca/menu-eng.html" data-src="ajax/feed.1.json">Canada Border Services
+                    Agency</a></li>
+            <li><a href="https://agriculture.canada.ca/en" data-src="ajax/feed.2.json">Agriculture and Agri-Food
+                    Canada</a></li>
+            <li><a href="https://accessible.canada.ca" data-src="ajax/feed.3.json">Accessibility Standards Canada</a>
+            </li>
         </ul>
     </web-component>
 

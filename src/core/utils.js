@@ -41,9 +41,35 @@ define([], function () {
         );
     };
 
+    function _get_command(element) {
+
+        let _command = { scope: element, selector: false, transform: false };
+
+        // we can exit if there is no query
+        if (!element.hasAttribute('query')) {
+            return _command;
+        }
+
+        let [_query, transform] = element.getAttribute('query').split("?");
+        let [scope, selector] = _query.split('!');
+
+        if (scope !== '.') {
+            _command.scope = document;
+        }
+
+        if (transform) {
+            _command.transform = transform;
+        }
+
+        _command.selector = selector;
+
+        return _command
+    };
+
     return {
         empty: _empty,
         merge: _merge,
-        has: _has
+        has: _has,
+        command: _get_command
     };
 });
