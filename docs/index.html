@@ -14,7 +14,7 @@
         libero!</p>
 
     <h2>Web Components</h2>
-    <web-component component="feed" query=".!a[data-src]?merge=all&limit=5">
+    <web-component component="feed" query="a[data-src]?fetch=merge&limit=5">
         <ul>
             <li><a href="https://www.cbsa-asfc.gc.ca/menu-eng.html" data-src="ajax/feed.1.json">Canada Border Services
                     Agency</a></li>
@@ -25,7 +25,7 @@
         </ul>
     </web-component>
 
-    <web-component component="feed" query="page!a[data-src]?merge=all&limit=5">
+    <web-component component="feed" scope="page" query="a[data-src]?merge=all&limit=5">
         <ul>
             <li><a href="https://www.cbsa-asfc.gc.ca/menu-eng.html" data-src="ajax/feed.1.json">Canada Border Services
                     Agency</a></li>
